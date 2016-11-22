@@ -1,0 +1,7 @@
+Header always set X-Frame-Options: "deny"
+Header always set Content-Security-Policy: "script-src 'self'; reflected-xss block;"
+
+<Files ~ "\.lock$">
+    Order Allow,Deny
+    Deny from all
+</Files>

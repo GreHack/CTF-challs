@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body>
+    <div class="content">
+      <div id="wrapper">
+        <h1>Your YouTube playlist</h1>
+        <h2>You hack, you choose!</h2>
+        <a href="add.php" class="pure-button pure-button-primary">Add a new video</a>
+      </div>
+      <table class="pure-table pure-table-horizontal">
+        <thead>
+          <tr>
+            <th>What</th>
+            <th>Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          {{# data }}
+          <tr class="response">
+            <td>{{ title }}</td>
+            <td><a href="{{ link }}">{{ link }}</a></td>
+          </tr>
+          {{/ data }}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

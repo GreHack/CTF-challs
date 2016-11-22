@@ -1,0 +1,12 @@
+{
+    "license": "MIT",
+    "require": {
+        "mustache/mustache": "~2.8",
+        "alaouy/youtube": "~1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Securichal\\": "Securichal/"
+        }
+    }
+}

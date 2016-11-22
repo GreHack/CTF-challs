@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{> head }}
+  <body>
+    <div class="content" id="wrapper">
+      <h1>Add a new video to the playlist</h1>
+      <h3 class="error">{{ error }}</h3>
+      {{{ success }}}
+      <form class="pure-form pure-form-aligned" method="post">
+        <fieldset>
+          <div class="pure-control-group">
+            <label for="id">YouTube ID</label>
+              <input id="id" type="text" placeholder="YouTube ID" name="id">
+          </div>
+
+          <div class="pure-control-group">
+              <label for="flag">Admin validation code</label>
+              <input id="flag" type="text" placeholder="Flag" name="flag">
+          </div>
+
+          <div class="pure-controls">
+              <button type="submit" class="button-add pure-button pure-button-primary">Add</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

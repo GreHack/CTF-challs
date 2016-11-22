@@ -1,0 +1,26 @@
+body {
+  font-family: "Oswald", sans-serif;
+  font-size: 12px;
+}
+.response {
+  font-family: "Monaco", "Menlo", "Consolas", "Courier New", monospace;
+}
+.content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+}
+#wrapper {
+  margin-bottom: 10px;
+  text-align: center;
+}
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
+.button-add {
+  background: rgb(28, 184, 65);
+}
+.error {
+  color: rgb(202, 60, 60);
+}
