@@ -1,0 +1,12 @@
+version: '2'
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: fpm.dockerfile
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    ports:
+      - "2250:80"
