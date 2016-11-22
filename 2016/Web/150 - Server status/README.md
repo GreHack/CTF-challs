@@ -1,7 +1,7 @@
 # Server status
-Category: Web
-Points: 150
-Author: Le_suisse
+Category: Web  
+Points: 150  
+Author: Le_suisse  
 Description:
 > Sometimes data that should be kept private can become public
 

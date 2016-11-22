@@ -1,7 +1,7 @@
 # robots.txt is not the only one
-Category: Web
-Points: 50
-Author: Le_suisse
+Category: Web  
+Points: 50  
+Author: Le_suisse  
 Description:
 > Get information
 
