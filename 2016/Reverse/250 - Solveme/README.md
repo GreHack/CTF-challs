@@ -1,9 +1,9 @@
 #Solveme  
-author : ??  
+author : dok  
 category : Reverse  
 points : 250  
 file : 250_solveme.bin  
-sha1sum : 79e1434bff42e49edfd180cb27bec4bb7c8a26bd  
+sha1sum : 1058b3b11f1470de4c71ad5c1909e97d6ba2f0a3  
   
 Description :  
 >
