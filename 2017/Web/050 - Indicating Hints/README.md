@@ -1,7 +1,7 @@
 # Indicating Hints
-Category: Web
-Points: 50
-Author: Le_suisse
+Category: Web  
+Points: 50  
+Author: Le_suisse  
 Description:
 > Get information
 
