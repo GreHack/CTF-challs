@@ -1,8 +1,14 @@
+# F\*\*king flute
 author : iggy
+
 category : Stegoguessing
-points : 100 
+
+points : 100
+
 file : chall.bmp
+
 sha1sum : c58142d338b0e9e23d9e31e853995bd7ad7da310
+
 
 description:  
 >
