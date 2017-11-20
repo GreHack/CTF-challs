@@ -12,7 +12,7 @@ Description:
 
 <details>
     <summary>Flag (click to discover/hide)</summary>
-    <p>GH17{back_to_basics}</p>
+    <p>GH17{csp_is_not enough}</p>
 </details>
 
 ## How to run it?
