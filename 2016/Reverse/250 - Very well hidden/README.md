@@ -1,5 +1,5 @@
 # Very well hidden
-Category: Very well hidden  
+Category: Reverse  
 Points: 250  
 Author: xarkes  
 Description:

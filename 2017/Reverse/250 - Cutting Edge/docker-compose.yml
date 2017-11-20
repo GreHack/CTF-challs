@@ -1,0 +1,9 @@
+version: '2'
+services:
+  re:
+    build:
+      context: .
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "3250:80"

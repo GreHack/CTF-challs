@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>GreHack'17 — Cutting Edge</title>
+        <script defer>
+            function ready(fn) {
+                if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+                    fn();
+                } else {
+                    document.addEventListener('DOMContentLoaded', fn);
+                }
+            }
+
+            var Module = {wasmBinaryFile: "gh17.wasm", onRuntimeInitialized: main};
+            function main() {
+                let get_flag = Module.cwrap('get_data_js', 'string', ['string']);
+                ready(function() {
+                    let input_key = document.getElementById('key');
+                    let show_flag = document.getElementById('showflag');
+                    let get_flag_btn = document.getElementById('getflag');
+
+                    get_flag_btn.addEventListener('click', function() {
+                        show_flag.textContent = get_flag(input_key.value);
+                    });
+                });
+            }
+        </script>
+        <script src="gh17.js"></script>
+    </head>
+    <body>
+        <input type="text" name="key" id="key" placeholder="my_secret_key">
+        <button type="button" id="getflag">Get the flag!</button>
+        <span id="showflag"></span>
+    </body>
+</html>
