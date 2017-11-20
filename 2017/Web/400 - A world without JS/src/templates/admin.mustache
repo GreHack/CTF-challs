@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <title>ARaaS - Administration</title>
+</head>
+<body>
+    {{> navbar }}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Process invitation #{{ invitation.getId }}
+            </h1>
+            <hr>
+            <div class="content">
+                <p>{{{ invitation.getComment }}}</p>
+                <!-- "` --><!-- </textarea> --></form></option><form action="/admin.php" method="post">
+                    <input type="hidden" name="{{ anticsrf.getTokenName }}" value="{{ anticsrf.getToken }}">
+                    <input type="hidden" name="id" value="{{ invitation.getId }}">
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="status" value="1">
+                            Accept
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="status" value="-1" checked>
+                            Reject
+                        </label>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button class='button is-success' type='submit' id='submit'>
+                                Process
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

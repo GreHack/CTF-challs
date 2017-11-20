@@ -1,0 +1,25 @@
+version: '2'
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: fpm.dockerfile
+    user: www-data
+    security_opt:
+      - no-new-privileges
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    ports:
+      - "2400:80"
+  firefox:
+    image: selenium/standalone-firefox:3.6.0
+    restart: always
+  bot:
+    build:
+      context: .
+      dockerfile: bot.dockerfile
+    read_only: true
+    security_opt:
+      - no-new-privileges

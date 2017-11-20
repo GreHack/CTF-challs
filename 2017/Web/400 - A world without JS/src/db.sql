@@ -1,0 +1,21 @@
+CREATE TABLE user (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    admin BOOLEAN NOT NULL DEFAULT 0,
+    invited BOOLEAN NOT NULL DEFAULT 0
+);
+
+CREATE TABLE session (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    token CHAR(64) NOT NULL
+);
+
+CREATE TABLE invit_request (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    comment TEXT NOT NULL,
+    accepted INTEGER NOT NULL DEFAULT 0
+);
+CREATE INDEX idx_invit_user_id ON invit_request(user_id);

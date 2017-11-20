@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <title>ARaaS - Invitation</title>
+</head>
+<body>
+    {{> navbar }}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{^ user.isInvited }}
+                Request an invitation
+                {{/ user.isInvited }}
+                {{# user.isInvited }}
+                Invitation
+                {{/ user.isInvited }}
+            </h1>
+            <hr>
+            <div class="content">
+                {{^ user.isInvited }}
+                <!-- "` --><!-- </textarea> --></form></option><form action="/invit.php" method="post">
+                    <div class="field">
+                        <textarea class="textarea" name="comment" placeholder="Please describe in a few words why you want an invitation (HTML allowed)." required></textarea>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button class='button is-success' type='submit'>
+                                Request an invitation
+                            </button>
+                        </p>
+                    </div>
+                </form>
+                <hr>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Comment</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{# invitations }}
+                        <tr>
+                            <td>{{ getId }}</td>
+                            <td>{{{ getComment }}}</td>
+                            <td>{{ getStatus }}</td>
+                        </tr>
+                        {{/ invitations }}
+                        {{^ invitations }}
+                        <tr><td colspan='3'>You have not yet requested an invitation.</td></tr>
+                        {{/ invitations }}
+                    </tbody>
+                </table>
+                {{/ user.isInvited }}
+                {{# user.isInvited }}
+                Your code to access our amazing tool is: GH17{csp_is_not enough}
+                {{/ user.isInvited }}
+            </div>
+        </div>
+    </section>
+</body>
+</html>
