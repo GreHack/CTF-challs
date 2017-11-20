@@ -1,0 +1,15 @@
+version: '2'
+services:
+  fpm:
+    build:
+      context: .
+      dockerfile: fpm.dockerfile
+    user: www-data
+    security_opt:
+      - no-new-privileges
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    ports:
+      - "2250:80"

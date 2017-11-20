@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/securebin.css">
+    <title>SecureBin</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">SecureBin</a>
+
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main role="main" class="container">
+    <div class="content">
+        <h1>SecureBin</h1>
+        {{# comment }}<p>{{ comment }}</p>{{/ comment }}
+        <pre><code>{{ content }}</code></pre>
+        <p>
+            Permalink: <a href="{{ url }}">Go to this paste</a>
+        </p>
+        <form method="post">
+            <input type="text" name="comment" title="Comment" required>
+            <button type="submit" class="btn btn-primary">Generate new permalink with a comment</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>
