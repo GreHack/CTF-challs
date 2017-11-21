@@ -11,7 +11,7 @@
 
 #include "sha256.c"
 
-#define waitRound 60*15
+#define waitRound 60*15	// 15 min
 //#define waitRound 10
 
 const char cst1[] = "\xa0\x26\x2d\xfd\x90\x77\xdd\x32\xa3\x05\xd9\x69\xa9\x46\x9b\xf1\x65\xc1\x26\xe8\xe6\xad\x83\x41\x60\x22\x97\x8b\x0b\xce\x9a\x39";
@@ -19,7 +19,7 @@ const char cst1[] = "\xa0\x26\x2d\xfd\x90\x77\xdd\x32\xa3\x05\xd9\x69\xa9\x46\x9
 const char cst2[] = "\xEB\x59\x36\x1F\xC3\x36\xE2\x4B\xEA\x27";
 
 FILE *file;
-char OTPserial[9]="GreHack!";
+char OTPserial[9]="GreHack!";	// need to be overwritre with .ini file
 char hashBuf[32];
 char cur[32];
 int seq;
@@ -83,7 +83,6 @@ int main()
 	{
 		for (i = 0 ; i<32 ; i++)
 			cur[i]^=cst1[i];
-		// todo hour here
 		hash2(cur,32,hashBuf);
 		memcpy(cur,hashBuf,32);
 
@@ -91,7 +90,7 @@ int main()
 
 		seq++;
 
-		//wait();
+		//wait + flash;
 	for (k=0; k<waitRound ; k++)
 	{
 		LCD_colour(Green);
