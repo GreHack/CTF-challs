@@ -1,0 +1,114 @@
+== Title ==
+Earn your beer
+
+== category ==
+Hardware
+
+== difficulty ==
+500
+
+== authors ==
+Phil & Berurier
+
+== description ==
+Open the fridge without getting noticed and get the flag (and beers!).
+If the alarm ring, you're done, play again !
+
+
+== the full story (same text for all 3 challenges) ==
+
+Gagne ta bière !  (english bellow)
+
+Challenge 1 (150) : donne le format des trames de la télécommande 1
+Challenge 2 (300) : donne le format des trames de la télécommande 2
+Challenge 3 (500) : ouvre le frigo sans te faire chopper par le_suisse
+
+Gagne ta bière.
+
+Dans cette chienne de vie rien ne s’obtient facilement. Vous êtes enfin arrivé
+à entrer dans l’appart d’@el_suisse et vous vous apprêtez à lui piller son 
+trésor : les bières dans son frigo. Malheureusement celui-ci est malin et a
+pensé à tout. Il a protégé son réfrigérateur non pas par une mais deux alarmes!
+Impossible d’accéder au frigo sans vous faire remarquer.
+Mais pas de panique, rien n’est encore perdu. Bien que mis en place en novembre
+2017 avec du matériel en provenance d’Amazon, les systèmes de protection de
+conception Chinoises ont peut-être de sérieux soucis de design. 
+Afin de mener à bien l’opération vous vous êtes doté des mêmes deux alarmes et
+vous commencez leurs études afin d’arriver à désarmer les deux alarmes
+protègent les bières.
+
+Challenge 1 : étudiez le fonctionnement de la télécommande de l’alarme N°1 et 
+              donnez à une personne du staff ces informations pour obtenir
+              le flag.
+Challenge 2 : étudiez le fonctionnement de la télécommande de l’alarme N°2 et 
+              donnez à une personne du staff ces informations pour obtenir
+              le flag.
+Challenge 3 : ouvrez le frigo sans vous faire remarquer et obtenez le flag
+              (et le butin !).
+
+Les outils : 
+3 portables sous Linux sont disponibles et disposes de tous les outils pour
+résoudre les 3 challenges. Identifiants de connexion : grehack / grehack 
+*Si vous disposez de vos propres outils, vous pouvez les utiliser, il n’y a
+aucune limitation à ce niveau* --> la seule restriction est de s’installer à
+la table à côté du frigo.
+
+Pour les challenges 1 et 2 : un tuner TNT USB (RTL-SDR) vous permettra de
+tester la sécurité des télécommandes. Des outils sont présents et déjà
+configurés. : gqrx | rtl_* | audacity
+
+Pour le challenge 3 : Une fois la sécurité des télécommandes compromises il 
+faudra désarmer les 2 alarmes en service. Pour ceci un kit de dev basé sur un
+Arduino Nano et un circuit HOPERF RFM69 est fourni et prêt à l’emploie (sans 
+aucune modification hardware). Un template et la librairie à utiliser (avec
+des exemples) est disponible dans le répertoire /sketchbook afin de ne pas
+perdre de temps.
+
+Amusez-vous bien et gardez à l’esprit qu’être le premier vous assurera un gain
+sympa !
+
+
+===============================================================================
+
+Earn your beer!
+
+Challenge 1 (150): gives the datagram’s format of the remote control 1
+Challenge 2 (300): gives the datagram’s format of the remote control 2
+Challenge 3 (500): open the fridge without being caught by le_suisse
+
+Earn your beer.
+
+Life’s a bitch! You have finally got into @el_suisse's flat and you are about
+to loot his treasure: the beers in his fridge. Unfortunately this one is smart
+and thought at everything. He protected his refrigerator not by one but two
+alarms! You can’t access the fridge without been caught.
+But don’t panic, nothing is lost. Although a brand new set up in November 2017
+with hardware bought from Amazon, the Chinese designs of those 2 protection
+systems may have serious design flows.
+In order to carry out the operation you’ve bought the same alarms and you can
+start their study in order to disarm the two alarms protecting the beers.
+
+Challenge 1: study the datagrams of remote control of alarm N ° 1 and give it’s
+             information to a person of the staff to obtain the flag.
+Challenge 2: study the datagrams of remote control of alarm N ° 2 and give it’s
+             information to a person of the staff to obtain the flag.
+Challenge 3: open the fridge without getting noticed and get the flag 
+             (and beers!).
+
+The tools: 
+3 laptops under Linux are available and have all the tools to solve the 3
+challenges. Login grehack / grehack.
+* If you have your own tools, you can use them, there is no limitation * 
+--> the only restriction is to sit at the table next to the fridge.
+
+Challenges 1 and 2: a USB DVB-T tuner (RTL-SDR) will allow you to test the
+security of the remote controls. Tools are present and already configured : 
+gqrx | rtl_* | audacity
+
+For the challenge 3: Once the security of the remote controls is compromised
+it’s time to disarm the 2 alarms in use. For this task, a dev-kit based on an
+Arduino Nano and a HOPERF RFM69 IC is provided and ready for use (without need
+of hardware modifications). A template and the library to use (with examples)
+is available in the /sketchbook directory in order not to waste time.
+
+Have fun and keep in mind a breakthrough will give you a nice prize!
