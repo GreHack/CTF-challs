@@ -12,7 +12,7 @@
 
 ## Exploit 
 
-* [Exploit 200 - My little shell](https://github.com/Laxa/write-ups/tree/master/Grehack%202017/exploit200)
+* [200 - My little shell](https://github.com/Laxa/write-ups/tree/master/Grehack%202017/exploit200)
 
 * [250 - Beer Fighter](http://z4d.tuxfamily.org/blog/archives/243)
 
