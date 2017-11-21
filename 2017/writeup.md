@@ -2,9 +2,13 @@
 
 ## Crypto
 
-* [100 - New DSA](https://twitter.com/Pod_Sec/status/932201972412841985)
+* [100 - New DSA]( https://github.com/JulesDT/ctfWriteUps/tree/master/GreHack%202017/New%20Dsa)
+
+* [100 - New DSA](http://www.rogdham.net/2017/11/18/grehack-2017-write-ups.en)
 
 * [150 - Telegram](https://github.com/JulesDT/ctfWriteUps/tree/master/GreHack%202017/Telegram)
+
+* [300 - Not Hardcore](http://www.rogdham.net/2017/11/18/grehack-2017-write-ups.en)
 
 ## Web 
 
@@ -19,3 +23,7 @@
 ## Stego Guessing
 
 * [50 - Newbie Challenge](http://rootinthemiddle.org/write-up-steganography-50-newbie-challenge/)
+
+## Hardware
+
+* [100 - LCD Overflow](http://www.rogdham.net/2017/11/18/grehack-2017-write-ups.en)
