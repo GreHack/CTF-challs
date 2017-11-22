@@ -1,0 +1,29 @@
+For Remote 1
+Frequencies : 433.774MHZ to 433.862MHZ
+Modulation : AM / OOK (PWM)
+Timing : 
+* 1 bit = 800µs
+* bit 0 up time = 200µs
+* bit 1 up time = 600µs
+* 1 paquet = 17x800µs+pause = 14ms
+How many datagram sent per key push ? 52 times
+Bits signification of the *full* paquet : 
+
+
+code       buton   const    stop
+XXXXXXXX | KKKK  | CCCC   | S
+7------0   7--4    3--0     1
+
+Keys :
+1:
+A: 00110110 10001011 0		0x368B
+D: 00110110 00001011 0		0x360B
+P: 00110110 01001011 0		0x364B
+B: 00110110 11001011 0		0x36CB
+
+1 :
+A: 11110010 10001101 0		0xF28D
+D: 11110010 00001101 0		0xF20D
+P: 11110010 01001101 0		0xF24D
+B: 11110010 11001101 0		0xF2CD
+

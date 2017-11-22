@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bulma.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <title>ARaaS - Registration</title>
+</head>
+<body>
+    {{> navbar }}
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                Register
+            </h1>
+            <hr>
+            <div class="content">
+                {{# has_errors }}
+                <div class="notification is-danger">
+                    Registration failed! Maybe the username was already used?
+                </div>
+                {{/ has_errors }}
+                <!-- "` --><!-- </textarea> --></form></option><form action="/register.php" method="post">
+                    <input type="hidden" name="{{ anticsrf.getTokenName }}" value="{{ anticsrf.getToken }}">
+                    <div class="field">
+                        <p class="control has-icons-left has-icons-right">
+                            <input class="input" type="text" placeholder="Username" name="username" required>
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-user"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control has-icons-left">
+                            <input class="input" type="password" placeholder="Password" name="password" required>
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-lock"></i>
+                            </span>
+                        </p>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+                            <button class='button is-success' type='submit'>
+                                Register
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

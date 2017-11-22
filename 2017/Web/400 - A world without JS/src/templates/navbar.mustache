@@ -1,0 +1,30 @@
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
+    <div class="navbar-start">
+        {{# user.isLoggedIn }}
+        {{^ user.isInvited }}
+        <a class="navbar-item" href="/invit.php">Request an invitation</a>
+        {{/ user.isInvited }}
+        {{# user.isInvited }}
+        <a class="navbar-item" href="/invit.php">See your invitation</a>
+        {{/ user.isInvited }}
+        {{/ user.isLoggedIn }}
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <div class="field is-grouped">
+                {{^ user.isLoggedIn }}
+                <p class="control"><a class='button' href='/login.php'>Log In</a></p>
+                <p class="control"><a class="button is-primary" href="/register.php">Sign up</a></p>
+                {{/ user.isLoggedIn }}
+                {{# user.isLoggedIn }}
+                <div class="control">
+                    <!-- "` --><!-- </textarea> --></form></option><form action="/logout.php" method="post">
+                        <input type="hidden" name="{{ anticsrf_logout.getTokenName }}" value="{{ anticsrf_logout.getToken }}">
+                        <button class='button is-danger' type='submit'>Logout</button>
+                    </form>
+                </div>
+                {{/ user.isLoggedIn }}
+            </div>
+        </div>
+    </div>
+</nav>

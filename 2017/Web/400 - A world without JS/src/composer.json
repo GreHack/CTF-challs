@@ -1,0 +1,10 @@
+{
+    "require": {
+        "mustache/mustache": "^2.12",
+        "paragonie/easydb": "^2.3",
+        "paragonie/constant_time_encoding": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {"GreHack\\": "src/"}
+    }
+}
