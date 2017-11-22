@@ -23,6 +23,7 @@
 ## Stego Guessing
 
 * [50 - Newbie Challenge](http://rootinthemiddle.org/write-up-steganography-50-newbie-challenge/)
+* [100 - Fucking Flute](http://rootinthemiddle.org/write-up-steganography-100-fucking-flute/)
 
 ## Hardware
 
