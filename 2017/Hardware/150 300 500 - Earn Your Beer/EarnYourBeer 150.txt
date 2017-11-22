@@ -11,7 +11,7 @@ Hardware
 Phil & Berurier
 
 == description ==
-Challenge 1: fill the mask bellow and ask for the staff to check and gain your
+Challenge 1: fill the mask below and ask for the staff to check and gain your
              flag.
 
 For Remote 1
