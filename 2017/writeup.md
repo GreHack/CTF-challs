@@ -35,4 +35,4 @@
 
 ## BlockChain
 
-* [? Bounty](https://github.com/grandemk/ethereum-chall)
+* [100 Bounty](https://github.com/grandemk/ethereum-chall)
