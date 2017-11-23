@@ -1,4 +1,4 @@
-# F\*\*king flute 
+# Aztec 2 - The rage quit
 author : iggy  
 category : Stegoguessing  
 points : 200  
