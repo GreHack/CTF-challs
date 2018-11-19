@@ -1,0 +1,45 @@
+Keccak is not always better
+---
+
+# Context
+
+Keccak was chosen as the new standard for cryptographic hash function (SHA-3)
+by the NIST. It is a hash fonction based on the sponge construction and based
+on the Keccak-f permutation, both created by G. Bertoni, J. Daemen, M. Peeters
+and G. Van Assche.
+
+The sponge structure can be used for many application from hash functions to
+Pseudo Random Number Generators (PRNG) and Authenticated Encryption (AEAD).
+We are going to use the sponge construction and Keccak-f to compute a 
+Hash-based Message Authentication Code (HMAC). 
+
+You can find a more thorough description of Keccak and of the sponge
+construction on the website of their creators (https://keccak.team/) and in
+many places on the internet.
+
+# Challenge
+
+For this challenge, we suppose that the attacker - you - have found a website 
+storing session cookies that has been protected against tampering and forgery
+by using a custom HMAC function: only the webserver has the key that allows
+the computation of a valid HMAC and its verification.
+
+The attacker managed to retrieve the source code of the program that computes
+the HMAC.
+
+Your goal is to retrieve the key used to compute the HMAC and thus be able to
+forge a session cookie of your choice.
+
+# Informations needed
+
+Session cookie:
+    "username=Nics,admin=false;dc6b4bd35242da543eca12654205c11bbcce76e149623b387fcd9412d63d002e7a8dc3d3a2d77dbd736668f9b314d020"
+
+Session cookie data:
+    "username=Nics,admin=false"
+
+Session cookie HMAC (hex format):
+    "dc6b4bd35242da543eca12654205c11bbcce76e149623b387fcd9412d63d002e7a8dc3d3a2d77dbd736668f9b314d020"
+
+`kmac.cpp` can be compiled using the `Keccak-f.o` object of KeccakTools
+(https://github.com/KeccakTeam/KeccakTools)
