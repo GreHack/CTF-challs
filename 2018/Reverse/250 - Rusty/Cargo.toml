@@ -1,0 +1,10 @@
+[package]
+name = "rusty"
+version = "0.1.0"
+authors = ["xarkes <antide.petit@gmail.com>"]
+
+[profile.dev]
+opt-level = 0
+
+[profile.release]
+opt-level = 3
