@@ -14,7 +14,7 @@ Description:
 You need to have Docker and Docker Compose installed.
 Run ``composer install`` inside the image_randomizer directory
 (yeah, I'm too lazy to do that when I build the container) and then
-``docker-compose start`` inside this directory, the challenge will
+``docker-compose up`` inside this directory, the challenge will
 be available at http://localhost:2250/
 
 ``image_randomizer.zip`` file was the file given with the challenge during the CTF.
