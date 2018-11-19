@@ -12,5 +12,9 @@ Description:
 
 ## How to run it?
 You need to have Docker and Docker Compose installed.
-You can run: ``docker-compose start`` inside this directory, the challenge will
+Steps:-
+1. ``docker-compose build``
+2. ``docker-compose-up``
+
+Note: You can also run: ``docker-compose start`` inside this directory, the challenge will
 be available at http://localhost:2050/
