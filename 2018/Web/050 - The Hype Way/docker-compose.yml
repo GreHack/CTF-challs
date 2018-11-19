@@ -1,0 +1,14 @@
+version: "2.4"
+services:
+  hype-way:
+    build:
+      context: .
+    ports:
+      - "3050:8080"
+    networks:
+      - hype-way
+    restart: always
+    security_opt:
+      - no-new-privileges
+networks:
+  hype-way:
