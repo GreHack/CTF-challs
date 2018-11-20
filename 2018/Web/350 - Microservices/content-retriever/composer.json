@@ -1,0 +1,16 @@
+{
+    "require": {
+        "psr/http-client": "^1.0",
+        "psr/http-message": "^1.0",
+        "php-http/client-common": "^1.8",
+        "fin1te/safecurl": "dev-master",
+        "php-http/discovery": "^1.4",
+        "guzzlehttp/psr7": "^1.4",
+        "php-http/guzzle6-adapter": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "GreHack2018\\ContentRetriever\\": "src/"
+        }
+    }
+}

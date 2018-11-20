@@ -1,0 +1,67 @@
+version: "2.4"
+services:
+  microservices-front-nginx:
+    build:
+      context: ./git-branches/
+      dockerfile: nginx.dockerfile
+    ports:
+      - "3350:8080"
+    networks:
+      - microservices-frontend
+    restart: always
+    depends_on:
+      - "microservices-front-fpm"
+    security_opt:
+      - no-new-privileges
+  microservices-front-fpm:
+    build:
+      context: ./git-branches/
+      dockerfile: fpm.dockerfile
+    networks:
+      - microservices-frontend
+      - microservices-backend
+    restart: always
+    user: www-data
+    security_opt:
+      - no-new-privileges
+  microservices-content-retriever:
+    build:
+      context: ./content-retriever/
+      dockerfile: nginx.dockerfile
+    networks:
+      - microservices-backend
+    restart: always
+    depends_on:
+      - "microservices-content-retriever-fpm"
+    security_opt:
+      - no-new-privileges
+  microservices-content-retriever-fpm:
+    build:
+      context: ./content-retriever/
+      dockerfile: fpm.dockerfile
+    networks:
+      - microservices-backend
+    security_opt:
+      - no-new-privileges
+    restart: always
+    user: www-data
+  microservices-content-parser:
+    build:
+      context: ./content-parser/
+    networks:
+      - microservices-backend
+    security_opt:
+      - no-new-privileges
+    read_only: true
+    restart: always
+  microservices-flag:
+    build:
+      context: ./flag/
+    networks:
+      - microservices-backend
+    security_opt:
+      - no-new-privileges
+    restart: always
+networks:
+  microservices-frontend:
+  microservices-backend:
