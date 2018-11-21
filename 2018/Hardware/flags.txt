@@ -1,0 +1,7 @@
+Hardware_50		GH18{ST-LINKorBOOTLOADERdumpALL}
+Hardware_100		GH18{DumpRAMMatterForExploiting}
+Hardware_200		GH18{TheresAlwAYSAbackDOOR...}
+Hardware_300		GH18{...AndAshittyCodeDesign}
+Hardware_500		GH18{ThatsHowYouRulezThemAll}
+Hardware_501		GH18{InsaneLevelForGods!}
+

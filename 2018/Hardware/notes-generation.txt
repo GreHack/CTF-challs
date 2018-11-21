@@ -1,0 +1,56 @@
+Level 3 :
+Mot de passe du bootloader : rootbeer (bruteforce)
+Flag dans le firmware
+
+Level 4 :
+Mot de passe du device MySecretBelongToMe (ne jamais le communiquer)
+Secret: 
+So! You find a way to recover the secret. This device is really not so secure ... But give a try to the next one, you'll se we've patch EVERY rotten code. Your flag: GH18{...AndAshittyCodeDesign}
+
+
+Level 5 : --> changer la version 3.00 et décommenter un #define
+Mot de passe du bootloader : GreHack2018#$ (ne jamais le communiquer)
+Mot de passe du device MySecretBelongToMe#$ (ne jamais le communiquer)
+Secret:
+Ok, you find and exploit the last buffer overflow, nice job. Here is your flag GH18{ThatsHowYouRulezThemAll}. But it's not finish, download https://grehack.fr/data/2018/LjAITFtEKVaigfDrG59dCrY6A8yPFvek5CvU2JDO.tgz and go to level 6, the "insane" ultimate one.
+
+
+Level 6 : 
+Change bootloader pass $#GreH@ack2018BackDoor#$
+	char goodPass[32]= \
+	{0x9E,0x56,0xC3,0x31,0xAD,0x3E,0xAB,0x01,0x09,0x94,0x88,0x53,0xAA,0xAA,0x22,0xF9, \
+	 0x63,0x56,0xBF,0x29,0x39,0xC7,0x79,0xAD,0x1B,0x9D,0x51,0x87,0x29,0xE0,0xA2,0x3F}; 	// $#GreH@ack2018BackDoor#$
+
+Secret mdp : $#GreH@ack2018#$
+Secret:
+If you read this, you're a fuckin'damn skilled dude, your INSANE flag is GH18{InsaneLevelForGods!}
+
+Diffusion des sources level1 à 6 :
+* bien masquer le mot de passe de la backdoor du Level 6
+
+
+Reflash device:
+
+LVL1-LVL2 :
+* erase device
+* Flash du .hex en 0x08000000
+
+LVL3-LVL4 :
+* erase device
+* Flash du flashSTM32030big-LVL3-LVL4.hex en 0x08000000
+* Set du RDP=1
+* Set manuel du secret
+
+LVL5 :
+* erase device
+* Flash du flashSTM32030big-LVL5.hex en 0x08000000
+* Set du RDP=1
+* Set manuel du secret
+
+LVL6 :
+* erase device
+* Flash du flashSTM32030big-LVL6.hex en 0x08000000
+* Set du RDP=1
+* Set manuel du secret
+
+
