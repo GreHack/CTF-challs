@@ -1,0 +1,16 @@
+== Title ==
+Forgotten Hardware
+
+== category ==
+Reverse
+
+== difficulty ==
+300
+
+== author ==
+Phil (@PagetPhil)
+
+== description ==
+Reverse "bin".
+Look at the hint, it should help.
+(Beware of old forgotten tools, sometime they are not so accurate ...)
