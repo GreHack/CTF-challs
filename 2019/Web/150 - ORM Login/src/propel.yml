@@ -1,0 +1,10 @@
+propel:
+    database:
+        connections:
+            default:
+                adapter: sqlite
+                dsn: sqlite:/data/app.sq3
+                user: root
+                password: 
+                settings:
+                    charset: utf8

@@ -1,0 +1,40 @@
+<!--
+    Awesome, your propel set up is nearly done! You just have to describe how you want your database to look like.
+
+    You can let propel set up your sqlite database by running `vendor/bin/propel database:create && vendor/bin/propel database:insert-sql`.
+    This will create your database including all the tables.
+-->
+
+<!--
+    The root tag of the XML schema is the <database> tag.
+
+    The `name` attribute defines the name of the connection that Propel uses for the tables in this schema. It is not
+    necessarily the name of the actual database. In fact, Propel uses some configuration properties to link a connection
+    name with real connection settings (like database name, user and password).
+
+    The `defaultIdMethod` attribute indicates that the tables in this schema use the database's "native"
+    auto-increment/sequence features to handle id columns that are set to auto-increment.
+
+   [TIP]: You can define several schemas for a single project. Just make sure that each of the schema
+          filenames end with schema.xml.
+-->
+<database name="default" defaultIdMethod="native"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.6/database.xsd"
+          namespace="GrehackORMLogin"
+        >
+    <table name="user" phpName="User">
+        <column name="username" type="varchar" size="255" required="true"/>
+        <column name="password" type="varchar" size="255" required="true" />
+    </table>
+
+    <!--
+        When you're done with editing, open a terminal and run
+            `$ cd /home/thomas/Workspace/Securimag/gh-challs19/orm_login/src`
+            `$ vendor/bin/propel build`
+        to generate the model classes.
+
+        You should now be able to perform basic crud operations with your models. To learn how to use these models
+        please look into our documentation: http://propelorm.org/documentation/03-basic-crud.html
+    -->
+</database>

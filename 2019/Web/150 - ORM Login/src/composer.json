@@ -1,0 +1,13 @@
+{
+    "name": "grehack/orm_login",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "GrehackORMLogin\\": "GrehackORMLogin/"
+        }
+    },
+    "require": {
+        "propel/propel": "dev-master#c64c0d61a36544c8f7cb9073c039715ba9cc343a"
+    },
+    "minimum-stability": "dev"
+}
