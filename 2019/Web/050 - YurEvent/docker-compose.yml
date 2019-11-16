@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  yurevent-nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    restart: always
+    depends_on:
+      - "yurevent-fpm"
+    ports:
+      - "2050:8080"
+  yurevent-fpm:
+    build:
+      context: .
+      dockerfile: fpm.dockerfile
+    restart: always
+    user: www-data
+    security_opt:
+      - no-new-privileges
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+    read_only: true
