@@ -1,0 +1,74 @@
+version: "3.7"
+services:
+  internal-resources-nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    restart: always
+    networks:
+      internal-resource:
+        aliases:
+          - sandbox.internal.test
+          - admin.internal.test
+    depends_on:
+      - "internal-resources-sandbox-fpm"
+      - "internal-resources-admin-fpm"
+    ports:
+      - "2400:8080"
+  internal-resources-sandbox-fpm:
+    build:
+      context: ./internal-sandbox/
+      dockerfile: fpm.dockerfile
+    restart: always
+    user: www-data
+    security_opt:
+      - no-new-privileges
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+    read_only: true
+    depends_on:
+      - "internal-resources-redis"
+    networks:
+      - internal-resource
+  internal-resources-admin-fpm:
+    build:
+      context: ./internal-admin/
+      dockerfile: fpm.dockerfile
+    restart: always
+    user: www-data
+    security_opt:
+      - no-new-privileges
+    deploy:
+      resources:
+        limits:
+          memory: 200M
+    read_only: true
+    networks:
+      - internal-resource
+  internal-resources-redis:
+    build:
+      context: ./admin-bot-browser/
+      dockerfile: redis.dockerfile
+    networks:
+      - internal-resource
+    security_opt:
+      - no-new-privileges
+    read_only: true
+    restart: always
+  internal-resources-bot-browser:
+    build:
+      context: ./admin-bot-browser/
+      dockerfile: bot-browser.dockerfile
+    networks:
+      - internal-resource
+    restart: always
+    depends_on:
+      - "internal-resources-redis"
+    security_opt:
+      - seccomp:"./seccomp_chrome.json"
+    environment:
+      - MAX_BROWSERS=6
+networks:
+  internal-resource:
