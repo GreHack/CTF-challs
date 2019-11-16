@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  diagtool-nginx:
+    build:
+      context: .
+      dockerfile: nginx.dockerfile
+    restart: always
+    depends_on:
+      - "diagtool-fpm"
+    ports:
+      - "2075:8080"
+  diagtool-fpm:
+    build:
+      context: .
+      dockerfile: fpm.dockerfile
+    restart: always
+    user: www-data
+    deploy:
+      resources:
+        limits:
+          memory: 500M
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    read_only: true
