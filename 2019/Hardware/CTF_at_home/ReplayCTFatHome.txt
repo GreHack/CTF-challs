@@ -1,0 +1,9 @@
+If you want to continue playing at home, read this file. 
+
+The entire needed files are in the archive "Subjects.tar.gz". You can continu playing at home with the board you've obtained from during our CTF.
+
+If you need to reflash the board at it initial state, go to folder “LoadFirmware” and follow the instructions. It's a kind of help, because during the CTF you had to figure out yourleft this task.
+
+Feel free to contact me on twitter ( @PagetPhil ) if you need some hints to go further.
+
+Phil / GreHack team

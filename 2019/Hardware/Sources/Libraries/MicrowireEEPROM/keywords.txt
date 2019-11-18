@@ -1,0 +1,19 @@
+###########################################
+# Syntax Coloring Map For Microwire EEPROM library
+###########################################
+
+###########################################
+# Datatypes (KEYWORD1)
+###########################################
+
+MicrowireEEPROM	KEYWORD1
+
+###########################################
+# Methods and Functions (KEYWORD2)
+###########################################
+
+read KEYWORD2
+write KEYWORD2
+writeEnable KEYWORD2
+writeDisable KEYWORD2
+
