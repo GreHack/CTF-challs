@@ -4,7 +4,7 @@ This folder contains all the source code of the 8 hardware challenge played duri
 
 ## Continue to play at home with the bagde you get during the CTF :
 
-If you whant to continu playing, it's possible without spoolier.          
+If you want to continu playing, it's possible without spoolier.          
 In this case, just open subfolder [CTF_at_home](CTF_at_home/) and you'll find the 8 subjects.             
 The only difference is that I'm not here to do the firmware reloading, so my scripts are included in the folder. During the CTF you had to figure it out by yourself.           
 Feel free to reach me on Twitter if you have questions or want some hints  --> @PagetPhil       
