@@ -1,7 +1,7 @@
 # The Point
-Category: Reverse
-Points: 250
-Author: xarkes
+Category: Reverse  
+Points: 250  
+Author: xarkes  
 Description
 
 > Will it give you points?

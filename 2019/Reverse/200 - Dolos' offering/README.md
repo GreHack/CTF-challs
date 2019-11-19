@@ -1,7 +1,7 @@
 # Dolos' offering
-Category: Reverse
-Points: 200
-Author: PMain & Bitwo
+Category: Reverse  
+Points: 200  
+Author: PMain & Bitwo  
 Description:
 
 > I found this binary on the internet. I don't know if i can trust it. Can you help me.

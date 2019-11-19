@@ -1,7 +1,7 @@
 # xordump
-Category: Reverse
-Points: 100
-Author: dok
+Category: Reverse  
+Points: 100  
+Author: dok  
 Description:
 
 > It keep crashing and yet I see no output

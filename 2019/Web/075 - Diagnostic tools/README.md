@@ -1,7 +1,7 @@
 # Diagnostic tools
 Category: Web  
 Points: 75  
-Author: Le_suisse
+Author: Le_suisse  
 Description:
 > An helpful sysadmin has put online some diagnostic tools using the latest web technologies.
 

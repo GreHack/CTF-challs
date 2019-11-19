@@ -1,7 +1,7 @@
 # Tacit Apparatus
-Category: Reverse
-Points: 350
-Author: Ace
+Category: Reverse  
+Points: 350  
+Author: Ace  
 Description:
 
 > Are you furious enough?

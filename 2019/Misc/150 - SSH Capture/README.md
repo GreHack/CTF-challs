@@ -1,5 +1,13 @@
 # SSH Challenge
+Category: Misc  
+Points: 150  
+Author: Marion  
+Description:
+> Pwn the session. FLAG HAS NOT GH19{} FORMAT
 
+Available during the CTF: [b7bac819bddcd2d26dd8918290a1bc5334c04ce2.tar.gz](./b7bac819bddcd2d26dd8918290a1bc5334c04ce2.tar.gz)
+
+## Hints / Write Up
 Give me the user password
 <details>
     <summary>Hint 1 (click to discover/hide)</summary>

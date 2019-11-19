@@ -1,7 +1,7 @@
 # Internal Resources (again)
 Category: Web  
 Points: 400  
-Author: Le_suisse
+Author: Le_suisse  
 Description:
 > This server hosting internal dev services seems to have been updated since last
 > year but I still not able to find valuable information.

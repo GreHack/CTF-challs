@@ -1,7 +1,7 @@
 # YurEvent
 Category: Web  
 Points: 50  
-Author: Le_suisse
+Author: Le_suisse  
 Description:
 > AlpacaCon is one of those conferences where tickets are sold-out in minutes.
 > Hopefully, there might be a way to get a ticket at a reasonable price.
