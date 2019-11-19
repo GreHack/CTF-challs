@@ -1,0 +1,89 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly TheFlag="GH19{**<AndNoth1ngs_G0ingT0Chang3_TheW4yW3Live>**}"
+
+readonly BIN=bin
+rm -rf $BIN
+mkdir -p $BIN
+
+function main
+{
+  # Generate hashed-flag
+  g++ -O3 -Wall -Wextra -Werror src/hash_flag.cpp -o $BIN/hash_flag
+  $BIN/hash_flag "$TheFlag" > $BIN/model_hashed_flag.h
+
+  # Generate flag-checker model (input to the solving pass)
+  g++ -I$BIN -O1 src/model.cpp -o $BIN/model -no-pie
+
+  # Use 'gcc' so we don't link with the C++ runtime
+  gcc -I$BIN -Wall -Werror -s src/chall.cpp -Os -o $BIN/TacitApparatus -no-pie
+
+  /usr/bin/stat -c "%s" $BIN/TacitApparatus
+
+  run_test FlagShouldntAppearInClearText
+  run_test EmptyFlagShouldBeRejected
+  run_test InvalidFlagShouldBeRejected
+  run_test TruncatedFlagShouldBeRejected
+  run_test ValidFlagShouldBeAccepted
+  run_test ModelShouldBeSolvable
+
+  echo OK
+}
+
+function ModelShouldBeSolvable
+{
+  if ! python -c 'import angr' 2>/dev/null; then
+    echo "Angr not found, skipping this step.">&2
+    return 0
+  fi
+  ./solve.py $BIN/model
+}
+
+function FlagShouldntAppearInClearText
+{
+  if grep -F "$TheFlag" $BIN/TacitApparatus ; then
+    return 1
+  fi
+}
+
+function EmptyFlagShouldBeRejected
+{
+  if $BIN/TacitApparatus "" 2>/dev/null; then
+    return 1
+  fi
+}
+
+function InvalidFlagShouldBeRejected
+{
+  if $BIN/TacitApparatus "InvalidFlag" 2>/dev/null; then
+    return 1
+  fi
+}
+
+function TruncatedFlagShouldBeRejected
+{
+  local InvalidFlag1="${TheFlag:0:-1}_"
+  local InvalidFlag2="_${TheFlag:1}"
+
+  if $BIN/TacitApparatus "$InvalidFlag1" 2>/dev/null; then
+    return 1
+  fi
+
+  if $BIN/TacitApparatus "$InvalidFlag2" 2>/dev/null; then
+    return 1
+  fi
+}
+
+function ValidFlagShouldBeAccepted
+{
+  $BIN/TacitApparatus "$TheFlag" 2>/dev/null
+}
+
+function run_test
+{
+  echo "Test: $*"
+  "$@"
+}
+
+main
