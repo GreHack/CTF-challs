@@ -15,12 +15,6 @@ int main(int argc, char* argv[])
     return 1;
   }
 
-  if(strlen(argv[1]) > 64)
-  {
-    fprintf(stderr, "Input is too big.\n");
-    return 1;
-  }
-
   uint8_t buffer[64] {};
   strcpy((char*)buffer, argv[1]);
 
