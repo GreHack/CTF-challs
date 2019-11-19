@@ -1,0 +1,9 @@
+[auteur]
+pseudo =  "Nics" # Sera affiché sur l'interface publique
+[challenge]
+nom = "LPN - Passive"
+points = 300
+decription = "You managed to capture the communication between the tag and the reader while your neighbour used it. You don't like your neighbour very much. Steal his tag's secret."
+flag = "GH19{passive_bad_RNG_is_harder!}"
+categorie = "Crypto"
+
