@@ -1,0 +1,39 @@
+The provided executable binary is a register-based VM,
+featuring some weird instructions.
+
+The executed program is a kind of artisanal hash, in 16 passes.
+The resulting hash is compared to a fixed expected one.
+
+It's not possible to solve it by hand, but it's possible to use a solver.
+However, due to the VM layer, you can't directly plug the challenge into a
+symbolic execution framework like Angr or Miasm.
+
+Many approaches are possibles:
+
+Approach 1
+----------
+
+1) understand the VM instruction set, and extract its program.
+2) translate this program into C (less than 100 lines)
+3) compile it to an ELF file
+4) run it through Angr or Miasm and solve for the flag.
+(The pass count was tuned to 16, in order for the solving to take approx.  30s.)
+
+This is the approach used for the development of this challenge.
+
+Approach 2
+----------
+
+1) understand the VM instruction set, and extract its program.
+2) translate it to a C program directly manipulating symbolic expressions
+(e.g using some solver library like 'stp'), in order to directly build
+the final hash as an expression involving the bits from the input string.
+3) solve the resulting expression.
+
+This second approach should be a lot faster, as it totally avoids emulation.
+Actually, to harden the challenge, it should be possible to increase the pass
+count to a high value such as the Angr/Miasm approaches take too long,
+so the second approach becomes the only viable one.
+
+---
+Ace
