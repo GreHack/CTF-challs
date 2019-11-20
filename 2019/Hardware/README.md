@@ -2,7 +2,7 @@
 
 This folder contains all the source code of the 8 hardware challenge played during the CTF.
 
-## Continue to play at home with the bagde you get during the CTF :
+## Continue to play at home with the badge you get during the CTF :
 
 If you want to continu playing, it's possible without spoiler.          
 In this case, just open subfolder [CTF_at_home](CTF_at_home/) and you'll find the 8 subjects.             
