@@ -1,0 +1,11 @@
+The main purpose of this challenge is to read data on the stack and we have not to get a shell
+
+With gdb when we disassemble the main function of spider_collection_dl we saw a call to fgets limited to 0x480 character, so let's try with 0x480*'A'
+Then we observe that we print on stdout some 'A'.
+Then We can try it with some "%x". Bingo we print some stack values with the execution with a such entry. So with have a format string. But when we try with just 10 "%x" it doesn't work. So we have to a stack overflow. When we read the main function we see thaht fgets write at rbp-0x4b0 et printf read at rbp-0x430 so we have to write first 0x4b0-0x430 character before to print format.
+
+Next with gdb I set a breakpoint at *main+283 and I enter stack 400 to find some data. Here we find a fake flag on the stack. GH19{...}. It's th 17th element on the stack. With some test with gdb, we saw with the format "%154x$8x" 0x39314847 in little endian equal to GH19. So with %n$lx for n in {154, 155} we can obtain the flag in hexa that we have to translate in ASCII to get the flag
+
+## The numerical values depend from your environment
+
+##the PIE, NO_EXEC, ASLR and the other protection are activate
