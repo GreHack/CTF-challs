@@ -1,6 +1,6 @@
 # Military grade whitebox
-Category: Crypto
-Points: 250
+Category: Crypto  
+Points: 250  
 Author: Nathan R.
 Description:
 > Hey, I just found out this piece of code on a server. It must have been used for super important message ciphering but it does not look that strong.

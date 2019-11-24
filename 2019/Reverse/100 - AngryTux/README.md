@@ -1,7 +1,7 @@
 # Angry Tux
-Category: Reverse
-Points: 100
-Author: Aleknight
+Category: Reverse  
+Points: 100  
+Author: Aleknight  
 Description
 
 > Someone play with the Tux' dolls, and he hates it

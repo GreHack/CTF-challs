@@ -1,7 +1,7 @@
 # Spider Collection
-Category: Pwn
-Points: 75
-Author: Aleknight
+Category: Pwn  
+Points: 75  
+Author: Aleknight  
 Description
 
 > Which is the spider who weave the longest string?
