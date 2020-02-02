@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build
+build/
+build_webpack/
+
+# Personal
+.todo
+scripts/testrpc_pid
+.idea/
+.DS_Store
+gamedata/deploy.development.json
+
+# Private stuff
+.env
+
+# Misc
+.tern-port
