@@ -1,0 +1,66 @@
+services:
+  yaknet_level_0:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:10000:10000"
+    command: [ "10000", "0" ]
+  yaknet_level_1:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:10001:10001"
+    command: [ "10001", "1" ]
+  yaknet_level_2:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:10002:10002"
+    command: [ "10002", "2" ]
+  yaknet_level_3:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:10003:10003"
+    command: [ "10003", "3" ]
+  yaknet_level_4:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:10004:10004"
+    command: [ "10004", "3" ]
