@@ -1,0 +1,17 @@
+[package]
+name = "grehack_fass_example"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "compute_example"
+path = "src/compute/main.rs"
+
+[[bin]]
+name = "compute__file_example"
+path = "src/compute_file/main.rs"
+
+[dependencies]
+infer = "0.11.0"
+serde = { version = "1.0.147", features = ["derive"] }
+serde_json = "1.0.87"

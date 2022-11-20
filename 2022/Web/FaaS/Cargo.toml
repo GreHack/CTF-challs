@@ -1,0 +1,41 @@
+[package]
+name = "faas"
+version = "0.1.0"
+edition = "2021"
+default-run = "server"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "healthcheck"
+path = "src/healthcheck.rs"
+
+[dependencies]
+actix-multipart-extract = "0.1.5"
+actix-web = "4.2.1"
+actix-web-static-files = "4.0.0"
+async-trait = "0.1.58"
+cap-primitives = "1.0.0"
+cap-std = "1.0.0"
+env_logger = "0.9.3"
+rand = "0.8.5"
+rand_core = "0.6.4"
+serde = "1.0.147"
+serde_urlencoded = "0.7.1"
+static-files = "0.2.3"
+tempfile = "3.3.0"
+wasi-cap-std-sync = "2.0.1"
+wasi-common = "2.0.1"
+wasmtime = "2.0.1"
+wasmtime-wasi = "2.0.1"
+error-chain = "0.12.4"
+
+[dependencies.reqwest]
+version = "0.11.12"
+default-features = false
+features = [ "blocking" ]
+
+[build-dependencies]
+static-files = "0.2.3"

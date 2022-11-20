@@ -1,0 +1,6 @@
+[package]
+name = "faas_possible_solution"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

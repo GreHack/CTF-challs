@@ -1,0 +1,21 @@
+services:
+  faas:
+    build:
+      context: "."
+    init: true
+    read_only: true
+    ports:
+      - "127.0.0.1:3150:8080"
+    volumes:
+      - type: tmpfs
+        target: "/tmp"
+        tmpfs:
+          size: 256M
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    deploy:
+      resources:
+        limits:
+          memory: 256M

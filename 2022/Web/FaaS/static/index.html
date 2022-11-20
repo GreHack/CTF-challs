@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="water.css">
+    <title>GreHack'22 FaaS</title>
+</head>
+<body>
+    <h1>GreHack'22 FaaS</h1>
+    <h2>Usage</h2>
+    <h3>Compute</h3>
+    <p>
+        Compute a result from an input. See <a href="compute_example.wasm">compute_example.wasm</a> (<a href="compute_example.rs">source</a>) for an example.
+    </p>
+    <pre>
+        <code>
+            $ curl http://.../compute -F input='{"a": 10, "b": 20}' -F code=@compute_example.wasm
+            30
+        </code>
+    </pre>
+    <h3>Compute on file</h3>
+    <p>
+        Compute a result from a file. See <a href="compute_file_example.wasm">compute_file_example.wasm</a> (<a href="compute_file_example.rs">source</a>) for an example.
+        <a href="/alpaca.jpg">alpaca.jpg</a> is the demonstration file used in this example.
+    </p>
+    <pre>
+        <code>
+            $ curl http://.../compute_file -F source=@alpaca.jpg -F code=@compute_file_example.wasm
+            image/jpeg
+        </code>
+    </pre>
+</body>
+</html>
