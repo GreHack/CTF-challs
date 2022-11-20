@@ -7,3 +7,4 @@ Here are some of the challenges (including sources) of the
  * [GreHack'17](/2017)
  * [GreHack'18](/2018)
  * [GreHack'19](/2019)
+ * [GreHack'22](/2022)

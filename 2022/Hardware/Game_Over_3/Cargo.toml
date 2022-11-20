@@ -1,0 +1,26 @@
+[package]
+name = "phil"
+version = "0.1.0"
+edition = "2021"
+default-run = "server"
+
+[[bin]]
+name = "server"
+path = "src/main.rs"
+
+[[bin]]
+name = "healthcheck"
+path = "src/healthcheck.rs"
+
+[dependencies]
+actix-web = "4.2.1"
+env_logger = "0.9.3"
+error-chain = "0.12.4"
+md-5 = "0.10.5"
+serde = { version = "1.0.147", features = ["derive"] }
+regex = "1.7.0"
+
+[dependencies.reqwest]
+version = "0.11.12"
+default-features = false
+features = [ "blocking" ]

@@ -1,0 +1,19 @@
+services:
+  cc_server:
+    build:
+      context: "."
+    read_only: true
+    restart: always
+    init: true
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges
+    ports:
+      - "127.0.0.1:80:8080"
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    environment:
+       - FLAG=GH22{ThisWasTheLastStepCongratz}
