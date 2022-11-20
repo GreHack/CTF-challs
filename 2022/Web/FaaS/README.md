@@ -21,5 +21,6 @@ be available at http://127.0.0.1:3150/
 
     The endpoint `POST /compute_file` is a bit too permissive and allow to access more files than absolutely required.
 
-    
+    See the [possible_solution folder](./possible_solution) for code snippet showing how it was possible to find
+    the flag and to read it.
 </details>
