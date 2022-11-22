@@ -18,18 +18,22 @@ be available at 127.0.0.1:4242
 
 ## Expected resolution steps
 
-The PRNG is weak and cycles every 4064 numbers.
+<details>
+    <summary>Click to discover/hide</summary>
 
-Encrypt a long message (~250 characters)
+    The PRNG is weak and cycles every 4064 numbers.
 
-Remove the 16 first characters (the nonce)
+    Encrypt a long message (~250 characters)
 
-XOR the encrypted message with your message (you retrieve the output of the AES_CTR encryption)
+    Remove the 16 first characters (the nonce)
 
-Encrypt 4063 other messages
+    XOR the encrypted message with your message (you retrieve the output of the AES_CTR encryption)
 
-Retrieve the admin message
+    Encrypt 4063 other messages
 
-XOR the admin message with the result of the previous xor
+    Retrieve the admin message
 
-Automated solve: [solve.py](./solve.py)
+    XOR the admin message with the result of the previous xor
+
+    Automated solve: [solve.py](./solve.py)
+</details>
