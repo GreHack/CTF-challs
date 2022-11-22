@@ -1,0 +1,4 @@
+todo:
+    - Add the secret flag on the encrypted disk
+
+If my luks passphrase is leaked, I can always change it.
