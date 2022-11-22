@@ -1,0 +1,14 @@
+services:
+  countingonyou:
+    build:
+      context: "."
+    security_opt:
+      - no-new-privileges
+    read_only: true
+    restart: always
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+    ports:
+      - "127.0.0.1:4242:4242"
