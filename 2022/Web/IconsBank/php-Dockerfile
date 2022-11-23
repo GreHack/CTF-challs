@@ -1,0 +1,10 @@
+FROM php:8.1-fpm-bullseye
+
+RUN apt-get update && apt-get install -y \
+		libpng-dev \
+	&& docker-php-ext-configure gd \
+	&& docker-php-ext-install -j$(nproc) gd
+
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini" \
+ && mkdir -p /var/www \
+ && echo 'GH22{c0mpression_does_not_prot3ct_from_png_execut1on}' > /var/www/.flag

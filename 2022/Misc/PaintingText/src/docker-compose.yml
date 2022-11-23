@@ -1,0 +1,47 @@
+version: '3.5'
+
+services:
+  autoheal:
+    image: willfarrell/autoheal
+    restart: unless-stopped
+    container_name: discord_exploit_autoheal
+    read_only: true
+    environment:
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  chall:
+    build:
+      context: .
+      dockerfile: chall/Dockerfile
+    container_name: discord_exploit_bot
+    command: python chall.py
+    restart: unless-stopped
+    read_only: true
+    volumes:
+      - ./chall/chall.py:/chall/chall.py
+    healthcheck:
+      test: ["CMD", "/bin/sh", "-c", "curl -sS http://chall:8000/health | grep -c -F 'alive!' > /dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  broker:
+    build:
+      context: .
+      dockerfile: broker/Dockerfile
+    container_name: discord_exploit_broker
+    command: python broker.py
+    restart: unless-stopped
+    read_only: true
+    volumes:
+      - ./broker/broker.py:/broker/broker.py
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD", "/bin/sh", "-c", "pgrep python > /dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
