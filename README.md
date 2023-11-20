@@ -8,3 +8,4 @@ Here are some of the challenges (including sources) of the
  * [GreHack'18](/2018)
  * [GreHack'19](/2019)
  * [GreHack'22](/2022)
+ * [GreHack'23](/2023)
