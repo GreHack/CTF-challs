@@ -1,0 +1,31 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:16.0-alpine
+    environment:
+      - POSTGRES_PASSWORD=${PGPASSWORD}
+      - POSTGRES_USER=${PGUSER}
+      - POSTGRES_DB=${PGDATABASE}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /var/run
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 30s
+      start_period: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    read_only: true
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    env_file:
+      - .env
+    ports:
+      - "8080:3000"
