@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  web:
+    build: 
+      context: .
+    container_name: beer-me-up-before-your-format
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./app/:/app/"
+    command: "python3 -m flask run --host=0.0.0.0 --port=8000"

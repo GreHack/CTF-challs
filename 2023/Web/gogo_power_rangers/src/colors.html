@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Go Go Power Rangers !</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-header">
+            <h2>Select your Ranger color</h2>
+        </div>
+        <form id="colorForm" method="POST" action="/colors">
+            <select class="form-control" name="color" id="colorSelection">
+                <option value="unknown">Unknown Ranger</option>
+                <option value="red">Red Ranger</option>
+                <option value="blue">Blue Ranger</option>
+                <option value="yellow">Yellow Ranger</option>
+                <option value="green">Green Ranger</option>
+                <option value="pink">Pink Ranger</option>
+            </select>
+            <button type="submit" class="submit-btn">Select</button>
+        </form>
+        <div class="greeting" id="greetingMessage">
+            {{.Greeting}}
+            {{.ParsedColorTemplate}}
+        </div>
+        <div class="ranger-image" id="rangerImage"></div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            var bodyElement = $('body');
+            var greetingElement = $('.greeting');
+            var button = $('.btn');
+            var colorSelectionElement = $('#colorSelection');
+            var rangerImageElement = $('#rangerImage');
+            var title = $('.form-header');
+
+            function setColorTheme(color) {
+                switch (color) {
+                    case 'red':
+                        rangerImageElement.css('background-image', 'url("/static/img/red_ranger.png")');
+                        rangerImageElement.css('border', '2px solid red');
+                        greetingElement.css('color', 'red');
+                        greetingElement.css('border', '2px solid red');
+                        button.css('background-color', 'red');
+                        title.css('color', 'red');
+                        break;
+                    case 'blue':
+                        rangerImageElement.css('background-image', 'url(/static/img/blue_ranger.png)');
+                        rangerImageElement.css('border', '2px solid blue');
+                        greetingElement.css('color', 'blue');
+                        greetingElement.css('border', '2px solid blue');
+                        button.css('background-color', 'blue');
+                        title.css('color', 'blue');
+                        break;
+                    case 'yellow':
+                        rangerImageElement.css('background-image', 'url(/static/img/yellow_ranger.png)');
+                        rangerImageElement.css('border', '2px solid yellow');
+                        greetingElement.css('color', 'yellow');
+                        greetingElement.css('border', '2px solid yellow');
+                        button.css('background-color', 'yellow');
+                        title.css('color', 'yellow');
+                        break;
+                    case 'green':
+                        rangerImageElement.css('background-image', 'url(/static/img/green_ranger.png)');
+                        rangerImageElement.css('border', '2px solid green');
+                        greetingElement.css('color', 'green');
+                        greetingElement.css('border', '2px solid green');
+                        button.css('background-color', 'green');
+                        title.css('color', 'green');
+                        break;
+                    case 'pink':
+                        rangerImageElement.css('background-image', 'url(/static/img/pink_ranger.png)');
+                        rangerImageElement.css('border', '2px solid pink');
+                        greetingElement.css('color', 'pink');
+                        greetingElement.css('border', '2px solid pink');
+                        button.css('background-color', 'pink');
+                        title.css('color', 'pink');
+                        break;
+                    default:
+                        rangerImageElement.css('background-image', '');
+                        greetingElement.css('color', 'black');
+                }
+            }
+
+            $("#colorForm").on("submit", function(event) {
+                event.preventDefault();
+
+                var formData = $(this).serialize();
+                var colorSelectionValue = colorSelectionElement.val();
+                $.ajax({
+                    url: '/',
+                    type: 'POST',
+                    data: formData,
+                    success: function(data) {
+                        $("#greetingMessage").html(data);
+                        setColorTheme(colorSelectionValue);
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

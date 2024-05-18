@@ -1,0 +1,3 @@
+plain = 'iloveGH!iloveGH!'
+cipher = '0f973d8234b8086847b9d423617a19b0'
+encrypted flag = 'bc4daf41f71e4dd958a852bbbbf8dfec'

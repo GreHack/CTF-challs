@@ -1,0 +1,3 @@
+# CatsExpo 
+
+Your boss came to see you this morning with a very special request. He'd like you to test the security of his website, where he uploads pictures of his cats. He tells you that he's used a complex system for uploading them, so normally there shouldn't be any problems, but in doubt you'd probably better take a look...

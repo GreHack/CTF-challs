@@ -1,0 +1,5 @@
+The challenge reveals that it is connected to the network and that you need to find the IP and service to connect. 
+The image provided is a simple "dd" of a Debian. You need to mount the only partition and look in the /etc/network/interfaces file for the IP of the network card.
+For the service, you need to look at what is launched via systemd, which is a bit boring. Or do a simple ls /home and see that there is a "phil" account. In the home directory there are 2 bash scripts and in one there is the command: socat -d tcp-l:5000,reuseaddr,fork EXEC:"/home/phil/app_1",su=phil,pty,stderr,echo=0,raw &     
+The flag is obtained by doing :
+telnet 10.0.29.42 5000

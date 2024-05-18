@@ -1,0 +1,3 @@
+Flask
+flask-session
+pydash==5.1.0

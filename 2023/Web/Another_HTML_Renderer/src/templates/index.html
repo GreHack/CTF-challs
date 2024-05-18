@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another HTML renderer</title>
+    <style>
+        :root {
+            --background-color: {{backgroundColor}};
+            --text-color: {{textColor}};
+            --select-color: lightblue;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.jpg') }}" />
+</head>
+<body>
+    <h1 class="mgb-40">HTML renderer 🎨</h1>
+    <textarea id="userInput">{{html}}</textarea><br>
+    <input id="backgroundColor" class="mgb-20 mgt-20 mgr-20" type="color" name="background" value="{{backgroundColor}}">Background color<br>
+    <input id="textColor" class="mgr-20" type="color" name="text" value="{{textColor}}">Text color<br>  
+
+    <hr class="mgt-70 mgb-70">
+    
+    <iframe id="render" sandbox="" srcdoc="<style>* { text-align: center; }</style>{{html}}" width="70%" height="500px"></iframe>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

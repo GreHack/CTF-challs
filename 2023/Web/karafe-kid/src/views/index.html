@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Easy mathematics</title>
+  <link rel="shortcut icon" href="/static/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+  <style>
+    body { padding-top: 50px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Easy mathematics</h1>
+        I've noticed that more and more CTFs include math tests.<br> So I'm developing an API to solve some of these problems.
+        <br/>
+      <i>If you'd like to contribute and add new calculs, the code is available here : <a href="/?source">here</a></i>
+    </div>
+    <!-- Documentation Section -->
+    <div class="documentation">
+      <h2>API Routes Documentation</h2>
+      <ul>
+        <li>
+          <b>/api/add</b> - POST
+          <p>Adds two numbers. Parameters: <code>a</code>, <code>b</code>. Returns the sum.</p>
+        </li>
+        <li>
+          <b>/api/sub</b> - POST
+          <p>Subtracts two numbers. Parameters: <code>a</code>, <code>b</code>. Returns the difference.</p>
+        </li>
+        <li>
+          <b>/api/mul</b> - POST
+          <p>Multiplies two numbers. Parameters: <code>a</code>, <code>b</code>. Returns the product.</p>
+        </li>
+        <li>
+          <b>/api/eq</b> - POST
+          <p>Checks equality of two numbers. Parameters: <code>a</code>, <code>b</code>. Returns true if equal, false otherwise.</p>
+        </li>
+        <li>
+          <b>/api/polynome</b> - POST
+          <p>Solves a quadratic equation. Parameters: <code>a</code>, <code>b</code>, <code>c</code>. Returns the roots if real, error message otherwise.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

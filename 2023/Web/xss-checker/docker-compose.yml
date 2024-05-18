@@ -1,0 +1,29 @@
+version: '3.5'
+
+services:
+  # Autoheal
+  autoheal:
+    image: willfarrell/autoheal
+    restart: unless-stopped
+    container_name: grehack_autoheal
+    read_only: true
+    environment: 
+      - AUTOHEAL_CONTAINER_LABEL=all
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  app:
+    build: 
+      context: ./src/
+      dockerfile: Dockerfile
+    volumes:
+      - './flag.txt:/flag.txt'
+    ports:
+      - "8000:8000"
+    container_name: xss_checker
+    entrypoint: ["node", "/app/main.js"]
+    healthcheck:
+      test: ["CMD", "/bin/sh", "-c", "pgrep node > /dev/null"]
+      interval: 5s
+      timeout: 5s
+      retries: 10

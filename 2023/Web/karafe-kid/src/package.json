@@ -1,0 +1,21 @@
+{
+  "name": "tri-selectif",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "/usr/bin/node ./index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.8.4"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "4.17.0"
+  }
+}

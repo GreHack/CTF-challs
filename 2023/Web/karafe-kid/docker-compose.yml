@@ -1,0 +1,12 @@
+version: '3.5'
+
+services:
+  web:
+    build: ./src/
+    container_name: grehack_karafe_kid
+    volumes:
+      - "./src/:/usr/src/app/:ro"
+    read_only: true
+    ports:
+      - "3000:3000"
+    command: 'sh -c "node index.js"'

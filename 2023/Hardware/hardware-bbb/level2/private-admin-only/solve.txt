@@ -1,0 +1,6 @@
+Once you have logged on to the application, you need to enter the password to display the level2 flag. 
+The binary that handles this is /home/phil/app_1 
+It is stripped but opens easily under Ghidra.
+The string "LEVEL 2\r\nEnter the password" is used to XREF the FUN_00010cc0 function which manages level2.
+The function asks for a password, then opens the file /home/phil/image.jpg and calculates its CRC32 checksum.
+These 4 bytes are then XORed with a constant string to give the constant 0xfca7ee20. The result is: 0xfca7ee20 XOR password = "GH23". This gives the password 67A695CF with endianness history.

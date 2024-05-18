@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@300&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Azeret Mono', monospace;
+    text-align: center;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+body {
+    padding-top: 40px;
+}
+
+::-moz-selection { /* Code for Firefox */
+    color: var(--text-color);
+    background: var(--select-color);
+}
+
+::selection {
+    color: var(--text-color);
+    background: var(--select-color);
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: 1; /* Firefox */
+  }
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--text-color);
+}
+  
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--text-color);
+}
+
+textarea, input, select, iframe {
+    outline: none;
+    border: var(--text-color) solid 4px;
+    padding: 8px;
+}
+
+textarea {
+    width: 60%;
+    height: 200px;
+}
+
+input[type='color'] {
+    padding: 5px;
+    width: 100px;
+    height: 50px;
+}
+
+option:checked {
+    background-color: var(--select-color) !important;
+}
+
+button {
+    cursor: pointer;
+    border: var(--text-color) solid 4px;
+    padding: 8px;
+}
+
+hr {
+    height: 4px;
+    background-color: var(--text-color);
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ** Titles ** */
+.title { font-size: 50px; }
+h1 { font-size: 40px; }
+h2 { font-size: 35px; }
+h3 { font-size: 30px; }
+h4 { font-size: 25px; }
+
+/* ** Margins ** */
+.mgt-40 { margin-top: 40px; }
+.mgt-70 { margin-top: 70px; }
+.mgt-20 { margin-top: 20px; }
+.mgb-70 { margin-bottom: 70px; }
+.mgb-40 { margin-bottom: 40px; }
+.mgb-20 { margin-bottom: 20px; }
+.mgb-10 { margin-bottom: 10px; }
+.mgr-20 { margin-right: 20px;}

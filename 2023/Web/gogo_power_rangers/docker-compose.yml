@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  web:
+    build:
+      context: ./src/
+    container_name: gogo_power_rangers
+    ports:
+      - "5000:5000"
+    read_only: true
+    mem_limit: 2g
+    restart: always
+    cpus: 2

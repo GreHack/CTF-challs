@@ -1,0 +1,9 @@
+version: "3"
+services:
+  web:
+    container_name: web_catsexpo
+    build:
+      context: .
+      dockerfile: ./src/Dockerfile
+    ports: 
+      - "4002:4002"

